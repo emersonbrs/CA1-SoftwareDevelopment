@@ -32,14 +32,6 @@ public class RepairQuotation {
         return express;
     }
 
-    public double getBasePrice()   {
-        return 0;
-    }
-
-    public double getDiscount()    {
-        return 0;
-    }
-
     public double getExpressCharge() {
         return 0;
     }
@@ -58,6 +50,14 @@ public class RepairQuotation {
  
     public void setExpress(boolean express) {
         this.express = express;
+    }
+
+    public double getBasePrice() {
+        return 0;
+    }
+
+    public double getDiscount() {
+        return 0;
     }
 
     public double calculateQuotation() {
