@@ -36,6 +36,22 @@ public class RepairQuotation {
         return 0;
     }
 
+     public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+ 
+    public void setServiceNumber(int serviceNumber) {
+        this.serviceNumber = serviceNumber;
+    }
+ 
+    public void setStudent(boolean student) {
+        this.student = student;
+    }
+ 
+    public void setExpress(boolean express) {
+        this.express = express;
+    }
+
     public double calculateQuotation() {
         return 0;
     }
