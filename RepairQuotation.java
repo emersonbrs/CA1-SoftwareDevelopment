@@ -24,6 +24,14 @@ public class RepairQuotation {
         return serviceNumber;
     }
 
+    public boolean isStudent() {
+        return student;
+    }
+ 
+    public boolean isExpress() {
+        return express;
+    }
+
     public double getBasePrice()   {
         return 0;
     }
