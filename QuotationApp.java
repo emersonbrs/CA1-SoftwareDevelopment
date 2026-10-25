@@ -9,4 +9,12 @@ public class QuotationApp {
         System.out.println("2. View quotation totals and summary");
         System.out.println("3. Exit");
     }
+
+    public static void createQuotation () {
+
+    }
+
+    public static void viewQuotationTotalAndSummary() {
+        
+    }
 }
