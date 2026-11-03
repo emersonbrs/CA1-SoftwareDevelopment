@@ -13,7 +13,8 @@ public class QuotationApp {
 
             switch (myChoice) {
                 case "1":
-                    createQuotation(myChoice, menuQuotation, repairQuotation, sc);
+                    CreateQuotationApp createQuotation = new CreateQuotationApp();
+                    createQuotation.createQuotation(myChoice, menuQuotation, repairQuotation, sc);
                     break;
                 case "2":
                     viewQuotationTotalAndSummary();
@@ -25,18 +26,6 @@ public class QuotationApp {
                     break;
             }
         }
-    }
-
-    public static void createQuotation(String myChoice, String[] menu, RepairQuotation repairQuotation, Scanner sc) {
-        System.out.println("Welcome to the Computer Repair Shop! ;)");
-        System.out.println("What's your name?");
-
-        repairQuotation.setCustomerName(sc.nextLine());
-        MenuOptionApp menuOption = new MenuOptionApp();
-        System.out.println("********************************************");
-        System.out.println("Hello " + repairQuotation.getCustomerName() + ", welcome to our system!");
-        System.out.println("********************************************");
-        myChoice = menuOption.menuOption(menu, sc, repairQuotation.getQuotationMenuOption());
     }
 
     public static void viewQuotationTotalAndSummary() {
