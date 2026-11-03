@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MenuOptionApp {
-    public String menuOption(String[] menu, Scanner sc, String menuText) {
+    public String options(String[] menu, Scanner sc, String menuText) {
         boolean tryAgain = true;
         String myChoice = "";
         do {

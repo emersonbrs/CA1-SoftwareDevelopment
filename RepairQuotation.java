@@ -51,10 +51,6 @@ public class RepairQuotation {
         return express;
     }
 
-    public double getExpressCharge() {
-        return 0;
-    }
-
      public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
@@ -71,15 +67,7 @@ public class RepairQuotation {
         this.express = express;
     }
 
-    public double getBasePrice() {
-        return 0;
-    }
+    public void calculateFinalQuotation() {
 
-    public double getDiscount() {
-        return 0;
-    }
-
-    public double calculateQuotation() {
-        return 0;
     }
 }

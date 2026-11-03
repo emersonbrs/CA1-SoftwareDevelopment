@@ -10,12 +10,12 @@ public class QuotationApp {
 
         try (Scanner sc = new Scanner(System.in)) {
             RepairQuotation repairQuotation = new RepairQuotation();
-            myChoice = menuOption.menuOption(menuGeneral, sc, repairQuotation.getGeneralMenuOption());
+            myChoice = menuOption.options(menuGeneral, sc, repairQuotation.getGeneralMenuOption());
 
             switch (myChoice) {
                 case "1":
                     CreateQuotationApp createQuotation = new CreateQuotationApp();
-                    createQuotation.createQuotation(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
+                    createQuotation.create(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
                     break;
                 case "2":
                     viewQuotationTotalAndSummary();
@@ -30,6 +30,10 @@ public class QuotationApp {
     }
 
     public static void viewQuotationTotalAndSummary() {
+        
+    }
+
+    public void finalQuotation() {
         
     }
 }
