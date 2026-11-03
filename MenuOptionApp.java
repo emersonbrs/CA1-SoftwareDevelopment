@@ -17,7 +17,7 @@ public class MenuOptionApp {
 
             if (tryAgain) {
                 System.out.println("********************************************");
-                System.out.println("You need to choose one option from the menu.");
+                System.out.println("You need to choose a valid option.");
                 System.out.println("********************************************");
             }
         } while (tryAgain);

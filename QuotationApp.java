@@ -5,6 +5,7 @@ public class QuotationApp {
         String myChoice = "";
         String[] menuGeneral = {"1", "2", "3"};
         String[] menuQuotation = {"1", "2", "3", "4"};
+        String[] yesOrNo = {"y", "n"};
         MenuOptionApp menuOption = new MenuOptionApp();
 
         try (Scanner sc = new Scanner(System.in)) {
@@ -14,7 +15,7 @@ public class QuotationApp {
             switch (myChoice) {
                 case "1":
                     CreateQuotationApp createQuotation = new CreateQuotationApp();
-                    createQuotation.createQuotation(myChoice, menuQuotation, repairQuotation, sc);
+                    createQuotation.createQuotation(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
                     break;
                 case "2":
                     viewQuotationTotalAndSummary();

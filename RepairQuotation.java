@@ -43,11 +43,11 @@ public class RepairQuotation {
         return serviceNumber;
     }
 
-    public boolean isStudent() {
+    public boolean getStudent() {
         return student;
     }
  
-    public boolean isExpress() {
+    public boolean getExpress() {
         return express;
     }
 
