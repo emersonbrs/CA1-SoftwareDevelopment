@@ -5,7 +5,7 @@ public class QuotationApp {
         String myChoice = "";
         String[] menuGeneral = {"1", "2", "3"};
         String[] menuQuotation = {"1", "2", "3", "4"};
-        MenuOption menuOption = new MenuOption();
+        MenuOptionApp menuOption = new MenuOptionApp();
 
         try (Scanner sc = new Scanner(System.in)) {
             RepairQuotation repairQuotation = new RepairQuotation();
@@ -32,7 +32,7 @@ public class QuotationApp {
         System.out.println("What's your name?");
 
         repairQuotation.setCustomerName(sc.nextLine());
-        MenuOption menuOption = new MenuOption();
+        MenuOptionApp menuOption = new MenuOptionApp();
         System.out.println("********************************************");
         System.out.println("Hello " + repairQuotation.getCustomerName() + ", welcome to our system!");
         System.out.println("********************************************");
