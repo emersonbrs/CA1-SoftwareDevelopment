@@ -6,8 +6,8 @@ public class QuotationApp {
         String[] menu = {"1", "2", "3"};
         boolean tryAgain = true;
 
-    
         try (Scanner sc = new Scanner(System.in)) {
+            
             do {
                 menuChoice();
                 myChoice = sc.nextLine();
@@ -24,10 +24,23 @@ public class QuotationApp {
                     System.out.println("You need to choose one option from the menu.");
                     System.out.println("********************************************");
                 }
-                
+
             } while (tryAgain);
 
-            System.out.println("You choose.");
+            switch (myChoice) {
+                case "1":
+                    createQuotation();
+                    break;
+                case "2":
+                    viewQuotationTotalAndSummary();
+                    break;
+                case "3":
+                    System.out.println("Thanks.");
+                    break;
+            
+                default:
+                    break;
+            }
         }
     }
 
@@ -39,7 +52,17 @@ public class QuotationApp {
         System.out.print("Choose one option of the menu: ");
     }
 
-    public static void createQuotation () {
+    public static void createQuotation() {
+        try (Scanner sc = new Scanner(System.in)){
+            RepairQuotation repairQuotation = new RepairQuotation();
+
+            System.out.println("Welcome to the Computer Repair Shop! ;)");
+            System.out.println("What's your name?");
+
+            repairQuotation.setCustomerName(sc.nextLine());
+            System.out.println(repairQuotation.getCustomerName());
+
+        }
 
     }
 

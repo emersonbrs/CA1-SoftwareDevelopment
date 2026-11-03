@@ -8,16 +8,15 @@ public class RepairQuotation {
     private boolean student;
     private boolean express;
 
-    public RepairQuotation(String customerName, int serviceNumber,
-                           boolean student, boolean express) {
-        this.customerName = customerName;
-        this.serviceNumber = serviceNumber;
-        this.student = student;
-        this.express = express;
+    public RepairQuotation() {
+        customerName = "";
+        serviceNumber = 0;
+        student = false;
+        express = false;
     }
 
-    public int getCustomerName() { 
-        return serviceNumber;
+    public String getCustomerName() { 
+        return customerName;
     }
 
     public int getServiceNumber() { 
