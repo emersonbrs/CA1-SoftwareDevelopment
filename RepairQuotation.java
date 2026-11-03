@@ -10,8 +10,6 @@ public class RepairQuotation {
     private boolean student;
     private boolean express;
 
-    private double basePrice;
-
     public RepairQuotation() {
         customerName = "";
         generalMenuOption = "Application Menu for the Repair Shop\n"
@@ -27,7 +25,6 @@ public class RepairQuotation {
         serviceNumber = 0;
         student = false;
         express = false;
-        basePrice = 0.0;
     }
 
     public String getCustomerName() { 
@@ -69,6 +66,25 @@ public class RepairQuotation {
         }
     }
 
+    public String getServiceName() {
+        switch (serviceNumber) {
+            case 1:
+                return "Diagnostic check";
+            case 2:
+                return "Software installation";
+            case 3:
+                return "Virus removal";
+            case 4:
+                return "Screen replacement";
+            default:
+                return "";
+        }
+    }
+
+    public double getDiscount() {
+        return 0.0;
+    }
+
      public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
@@ -86,6 +102,20 @@ public class RepairQuotation {
     }
 
     public void calculateFinalQuotation() {
+        System.out.println("********************************************");
+        System.out.println("           Repair Service Details           ");
+        System.out.println("********************************************");
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Student: " + (student ? "Yes" : "No"));
+        System.out.println("Repair Service: " + getServiceName());
+        System.out.println("Base price: " + getBasePrice());
+        System.out.println("Discount: " + (student ? studentDiscountRate : 0.0));
+        System.out.println("Express charge: " + (express ? expressCharge : 0.0));
+
+        double discount = getBasePrice() * (student ? studentDiscountRate : 0.0);
+        double finalTotal = (getBasePrice() - discount) + (express ? expressCharge : 0.0);
+
+        System.out.println("Final total: €" + finalTotal);
 
     }
 }

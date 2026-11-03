@@ -32,8 +32,4 @@ public class QuotationApp {
     public static void viewQuotationTotalAndSummary() {
         
     }
-
-    public void finalQuotation() {
-        
-    }
 }

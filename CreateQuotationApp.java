@@ -31,7 +31,7 @@ public class CreateQuotationApp {
                 System.out.println("You need to choose Y or N for your answer.");
                 System.out.println("********************************************");
             }
-        } while (ynChoise.toLowerCase().equalsIgnoreCase("y") && ynChoise.toLowerCase().equalsIgnoreCase("n"));
+        } while (!ynChoise.toLowerCase().equalsIgnoreCase("y") && !ynChoise.toLowerCase().equalsIgnoreCase("n"));
 
         do {
             System.out.println("Do you need an express service? Y/N");
@@ -48,7 +48,7 @@ public class CreateQuotationApp {
                 System.out.println("You need to choose Y or N for your answer.");
                 System.out.println("********************************************");
             }
-        } while (ynChoise.toLowerCase() != "y" && ynChoise.toLowerCase() != "n");
+        } while (!ynChoise.toLowerCase().equalsIgnoreCase("y") && !ynChoise.toLowerCase().equalsIgnoreCase("n"));
 
         repairQuotation.calculateFinalQuotation();
     }
