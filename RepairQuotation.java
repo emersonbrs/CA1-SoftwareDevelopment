@@ -10,6 +10,8 @@ public class RepairQuotation {
     private boolean student;
     private boolean express;
 
+    private double basePrice;
+
     public RepairQuotation() {
         customerName = "";
         generalMenuOption = "Application Menu for the Repair Shop\n"
@@ -25,6 +27,7 @@ public class RepairQuotation {
         serviceNumber = 0;
         student = false;
         express = false;
+        basePrice = 0.0;
     }
 
     public String getCustomerName() { 
@@ -49,6 +52,21 @@ public class RepairQuotation {
  
     public boolean getExpress() {
         return express;
+    }
+
+    public double getBasePrice() {
+        switch (serviceNumber) {
+            case 1:
+                return 30.0;
+            case 2:
+                return 45.0;
+            case 3:
+                return 60.0;
+            case 4:
+                return 120.0;
+            default:
+                return 0.0;
+        }
     }
 
      public void setCustomerName(String customerName) {
