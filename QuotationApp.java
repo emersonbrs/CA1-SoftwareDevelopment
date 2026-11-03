@@ -37,7 +37,6 @@ public class QuotationApp {
                 case "3":
                     System.out.println("Thanks.");
                     break;
-            
                 default:
                     break;
             }
@@ -61,9 +60,7 @@ public class QuotationApp {
 
             repairQuotation.setCustomerName(sc.nextLine());
             System.out.println(repairQuotation.getCustomerName());
-
         }
-
     }
 
     public static void viewQuotationTotalAndSummary() {
