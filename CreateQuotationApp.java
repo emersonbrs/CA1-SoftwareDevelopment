@@ -24,7 +24,7 @@ public class CreateQuotationApp {
             if (ynChoise.toLowerCase().equalsIgnoreCase("y")) {
                 repairQuotation.setStudent(true);
                 break;
-            } else if (ynChoise.equalsIgnoreCase("n")) {
+            } else if (ynChoise.toLowerCase().equalsIgnoreCase("n")) {
                 repairQuotation.setStudent(false);
                 break;
             } else {
@@ -39,10 +39,10 @@ public class CreateQuotationApp {
             System.out.println("Do you need an express service? Y/N");
             ynChoise = sc.nextLine();
 
-            if (ynChoise.equals("y")) {
+            if (ynChoise.toLowerCase().equalsIgnoreCase("y")) {
                 repairQuotation.setExpress(true);
                 break;
-            } else if (ynChoise.equals("n")) {
+            } else if (ynChoise.toLowerCase().equalsIgnoreCase("n")) {
                 repairQuotation.setExpress(false);
                 break;
             } else {
