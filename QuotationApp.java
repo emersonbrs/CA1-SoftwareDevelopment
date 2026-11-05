@@ -11,7 +11,7 @@ public class QuotationApp {
 
         // Arrays to make sure the system is saving a limit of 5 quotations
         RepairQuotation[] quotations = new RepairQuotation[5];
-        double[] total = new double[5];
+        // double[] total = new double[5];
         // variable to count how many quotatins have been added
         int count = 0;
 
@@ -32,18 +32,33 @@ public class QuotationApp {
                             CreateQuotationApp createQuotation = new CreateQuotationApp();
                             createQuotation.create(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
 
-                            System.out.println("text" + repairQuotation.getCustomerName());
+                            quotations[count] = repairQuotation;
+                            // total[count] = repairQuotation.calculateFinalQuotation();
                             count ++;
                         } else {
+                            System.out.println("********************************************");
                             System.out.println("You have reached the limit of 5 quotations.");
+                            System.out.println("********************************************");
                         }
                         break;
                     case "2":
-                        repairQuotationMenu.calculateFinalQuotation();
-                        viewQuotationTotalAndSummary();
+                        // repairQuotationMenu.calculateFinalQuotation();
+                        double totalQuotations = 0.0;
+                        
+                        for (int i = 0; i < count; i++) {
+                            totalQuotations = totalQuotations + quotations[i].getIndividualTotal();
+                        }
+
+                        System.out.println("********************************************");
+                        System.out.println("           Repair Service Details           ");
+                        System.out.println("********************************************");
+
+                        viewQuotationTotalAndSummary(totalQuotations, quotations, count);
+                        
+                        System.out.println("********************************************");
                         break;
                     case "3":
-                        repairQuotationMenu.calculateFinalQuotation();
+
                         break;
                     default:
                         break;
@@ -52,7 +67,26 @@ public class QuotationApp {
         }
     }
 
-    public static void viewQuotationTotalAndSummary() {
-        
+    public static void viewQuotationTotalAndSummary(double totalQuotations, RepairQuotation[] quotations, int count) {
+        double sum = 0.0;
+        double avarage = 0.0;
+
+        if (count == 0) {
+            System.out.println("No quotations.");
+            return;
+        }
+
+        for (int i = 0; i < count; i++) {
+            System.out.println("Quotation " + (i + 1) + ":" + quotations[i].getCustomerName());
+            sum = sum + quotations[i].getIndividualTotal();
+            System.out.println("quotatiins Total" + sum);
+        }
+
+        avarage = sum / count;
+
+        System.out.println("Number:" + count);
+        System.out.printf("Combined value: €%.2f%n", totalQuotations);
+        System.out.printf("Highest: €%.2f%n", totalQuotations);
+        System.out.printf("Avarage: €%.2f%n", avarage);
     }
 }

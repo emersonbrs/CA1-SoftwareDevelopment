@@ -1,6 +1,6 @@
 public class RepairQuotation {
 
-    // Declaring variables
+    // Declaring fixed variables
     private static final double studentDiscountRate = 0.10;
     private static final double expressCharge = 20.0;
     private static final String generalMenuOption = "Application Menu for the Repair Shop\n"
@@ -14,10 +14,13 @@ public class RepairQuotation {
                             + "4. Screen replacement       €120\n"
                             + "Choose one of our services: ";
 
+    // Declaring variables
     private String customerName;
     private int serviceNumber;
     private boolean student;
     private boolean express;
+    private double individualTotal;
+    private double finalTotal;
 
     // Constructor
     public RepairQuotation() {
@@ -25,9 +28,19 @@ public class RepairQuotation {
         serviceNumber = 0;
         student = false;
         express = false;
+        individualTotal = 0.0;
+        finalTotal = 0.0;
     }
 
     // Getters
+    public Double getStudentDiscountRate() { 
+        return studentDiscountRate;
+    }
+
+    public Double getExpressCharge() { 
+        return expressCharge;
+    }
+
     public String getCustomerName() { 
         return customerName;
     }
@@ -86,6 +99,14 @@ public class RepairQuotation {
         return 0.0;
     }
 
+    public double getIndividualTotal() {
+        return individualTotal;
+    }
+
+    public double getFinalTotal() {
+        return finalTotal;
+    }
+
     // Setters
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
@@ -103,8 +124,18 @@ public class RepairQuotation {
         this.express = express;
     }
 
+    public void setIndividualTotal(double individualTotal) {
+        this.individualTotal = individualTotal;
+    }
+
     // Functions for calculations
     public double calculateFinalQuotation() {
+
+        // Calculating disconts and express
+        double discount = getBasePrice() * (student ? studentDiscountRate : 0.0);
+        double auxExpress = express ? expressCharge : 0.0;
+        //this.individualTotal = getBasePrice() - discount + auxExpress;
+        
         System.out.println("********************************************");
         System.out.println("           Repair Service Details           ");
         System.out.println("********************************************");
@@ -114,13 +145,9 @@ public class RepairQuotation {
         System.out.println("Base price: €" + getBasePrice());
         System.out.println("Discount: €" + (student ? (studentDiscountRate * 100) : 0.0));
         System.out.println("Express charge: €" + (express ? expressCharge : 0.0));
+        System.out.printf("Final total: €%.2f%n", individualTotal);
 
-        double discount = getBasePrice() * (student ? studentDiscountRate : 0.0);
-        double finalTotal = (getBasePrice() - discount) + (express ? expressCharge : 0.0);
-
-        System.out.printf("Final total: €%.2f%n", finalTotal);
-
-        return finalTotal;
+        return individualTotal;
     }
 }
 

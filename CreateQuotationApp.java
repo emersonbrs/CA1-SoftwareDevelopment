@@ -15,7 +15,7 @@ public class CreateQuotationApp {
 
         myChoice = menuOption.options(menu, sc, repairQuotation.getQuotationMenuOption());
         repairQuotation.setServiceNumber(Integer.parseInt(myChoice));
-        
+
         // looping until the user choose a valid option(Y or N)
         do {
             System.out.println("Are you Student? Y/N");
@@ -51,6 +51,12 @@ public class CreateQuotationApp {
                 System.out.println("********************************************");
             }
         } while (!ynChoise.toLowerCase().equalsIgnoreCase("y") && !ynChoise.toLowerCase().equalsIgnoreCase("n"));
+        
+        // double individualTotal = repairQuotation.getBasePrice() - repairQuotation.getDiscount() + repairQuotation.getExpress();
+        double individualTotal = repairQuotation.getBasePrice() * (repairQuotation.getStudent() ? repairQuotation.getStudentDiscountRate() : 0.0)
+                                 - repairQuotation.getDiscount() + 0;
+
+        repairQuotation.setIndividualTotal(individualTotal);
         
         System.out.println("********************************************");
         System.out.println("Quotation added. ;)");
