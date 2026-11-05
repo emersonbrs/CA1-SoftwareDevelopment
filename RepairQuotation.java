@@ -101,7 +101,7 @@ public class RepairQuotation {
         this.express = express;
     }
 
-    public void calculateFinalQuotation() {
+    public double calculateFinalQuotation() {
         System.out.println("********************************************");
         System.out.println("           Repair Service Details           ");
         System.out.println("********************************************");
@@ -115,8 +115,9 @@ public class RepairQuotation {
         double discount = getBasePrice() * (student ? studentDiscountRate : 0.0);
         double finalTotal = (getBasePrice() - discount) + (express ? expressCharge : 0.0);
 
-        System.out.println("Final total: €" + finalTotal);
+        System.out.printf("Final total: €%.2f%n", finalTotal);
 
+        return finalTotal;
     }
 }
 

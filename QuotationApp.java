@@ -19,6 +19,7 @@ public class QuotationApp {
                         createQuotation.create(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
                         break;
                     case "2":
+                        repairQuotation.calculateFinalQuotation();
                         viewQuotationTotalAndSummary();
                         break;
                     case "3":
