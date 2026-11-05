@@ -52,9 +52,12 @@ public class CreateQuotationApp {
             }
         } while (!ynChoise.toLowerCase().equalsIgnoreCase("y") && !ynChoise.toLowerCase().equalsIgnoreCase("n"));
         
-        // double individualTotal = repairQuotation.getBasePrice() - repairQuotation.getDiscount() + repairQuotation.getExpress();
-        double individualTotal = repairQuotation.getBasePrice() * (repairQuotation.getStudent() ? repairQuotation.getStudentDiscountRate() : 0.0)
-                                 - repairQuotation.getDiscount() + 0;
+        // Calculating the individual total
+        double base = repairQuotation.getBasePrice();
+        double discount = repairQuotation.getStudent() ? base * repairQuotation.getStudentDiscountRate() : 0.0;
+        double express = repairQuotation.getExpress() ? repairQuotation.getExpressCharge() : 0.0;
+        
+        double individualTotal = base - discount + express;
 
         repairQuotation.setIndividualTotal(individualTotal);
         
