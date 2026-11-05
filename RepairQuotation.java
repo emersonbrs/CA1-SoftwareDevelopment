@@ -1,5 +1,6 @@
 public class RepairQuotation {
 
+    // Declaring variables
     private static final double studentDiscountRate = 0.10;
     private static final double expressCharge = 20.0;
 
@@ -10,6 +11,7 @@ public class RepairQuotation {
     private boolean student;
     private boolean express;
 
+    // Constructor
     public RepairQuotation() {
         customerName = "";
         generalMenuOption = "Application Menu for the Repair Shop\n"
@@ -27,6 +29,7 @@ public class RepairQuotation {
         express = false;
     }
 
+    // Getters
     public String getCustomerName() { 
         return customerName;
     }
@@ -85,7 +88,8 @@ public class RepairQuotation {
         return 0.0;
     }
 
-     public void setCustomerName(String customerName) {
+    // Setters
+    public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }
  
@@ -101,6 +105,7 @@ public class RepairQuotation {
         this.express = express;
     }
 
+    // Functions for calculations
     public double calculateFinalQuotation() {
         System.out.println("********************************************");
         System.out.println("           Repair Service Details           ");

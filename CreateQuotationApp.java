@@ -16,6 +16,7 @@ public class CreateQuotationApp {
         myChoice = menuOption.options(menu, sc, repairQuotation.getQuotationMenuOption());
         repairQuotation.setServiceNumber(Integer.parseInt(myChoice));
         
+        // looping until the user choose a valid option(Y or N)
         do {
             System.out.println("Are you Student? Y/N");
             ynChoise = sc.nextLine();
@@ -33,6 +34,7 @@ public class CreateQuotationApp {
             }
         } while (!ynChoise.toLowerCase().equalsIgnoreCase("y") && !ynChoise.toLowerCase().equalsIgnoreCase("n"));
 
+        // looping until the user choose a valid option(Y or N)
         do {
             System.out.println("Do you need an express service? Y/N");
             ynChoise = sc.nextLine();

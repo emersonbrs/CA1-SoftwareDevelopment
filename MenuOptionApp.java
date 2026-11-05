@@ -2,8 +2,11 @@ import java.util.Scanner;
 
 public class MenuOptionApp {
     public String options(String[] menu, Scanner sc, String menuText) {
+        // Declaring variables
         boolean tryAgain = true;
         String myChoice = "";
+
+        // looping until the user choose a valid option
         do {
             System.out.print(menuText);
             myChoice = sc.nextLine();
