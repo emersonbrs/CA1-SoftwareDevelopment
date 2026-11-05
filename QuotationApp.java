@@ -10,22 +10,25 @@ public class QuotationApp {
 
         try (Scanner sc = new Scanner(System.in)) {
             RepairQuotation repairQuotation = new RepairQuotation();
-            myChoice = menuOption.options(menuGeneral, sc, repairQuotation.getGeneralMenuOption());
+            do {
+                myChoice = menuOption.options(menuGeneral, sc, repairQuotation.getGeneralMenuOption());
 
-            switch (myChoice) {
-                case "1":
-                    CreateQuotationApp createQuotation = new CreateQuotationApp();
-                    createQuotation.create(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
-                    break;
-                case "2":
-                    viewQuotationTotalAndSummary();
-                    break;
-                case "3":
-                    System.out.println("Thanks.");
-                    break;
-                default:
-                    break;
-            }
+                switch (myChoice) {
+                    case "1":
+                        CreateQuotationApp createQuotation = new CreateQuotationApp();
+                        createQuotation.create(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
+                        break;
+                    case "2":
+                        viewQuotationTotalAndSummary();
+                        break;
+                    case "3":
+                        repairQuotation.calculateFinalQuotation();
+                        System.out.println("Thanks.");
+                        break;
+                    default:
+                        break;
+                }
+            } while (!myChoice.equals("3"));
         }
     }
 

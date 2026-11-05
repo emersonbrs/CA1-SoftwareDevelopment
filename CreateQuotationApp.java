@@ -17,7 +17,7 @@ public class CreateQuotationApp {
         repairQuotation.setServiceNumber(Integer.parseInt(myChoice));
         
         do {
-            System.out.println("Are you a Student? Y/N");
+            System.out.println("Are you Student? Y/N");
             ynChoise = sc.nextLine();
 
             if (ynChoise.toLowerCase().equalsIgnoreCase("y")) {
@@ -49,7 +49,9 @@ public class CreateQuotationApp {
                 System.out.println("********************************************");
             }
         } while (!ynChoise.toLowerCase().equalsIgnoreCase("y") && !ynChoise.toLowerCase().equalsIgnoreCase("n"));
-
-        repairQuotation.calculateFinalQuotation();
+        
+        System.out.println("********************************************");
+        System.out.println("Quotation added. ;)");
+        System.out.println("********************************************");
     }
 }

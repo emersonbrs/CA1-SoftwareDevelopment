@@ -108,9 +108,9 @@ public class RepairQuotation {
         System.out.println("Customer Name: " + customerName);
         System.out.println("Student: " + (student ? "Yes" : "No"));
         System.out.println("Repair Service: " + getServiceName());
-        System.out.println("Base price: " + getBasePrice());
-        System.out.println("Discount: " + (student ? studentDiscountRate : 0.0));
-        System.out.println("Express charge: " + (express ? expressCharge : 0.0));
+        System.out.println("Base price: €" + getBasePrice());
+        System.out.println("Discount: €" + (student ? (studentDiscountRate * 100) : 0.0));
+        System.out.println("Express charge: €" + (express ? expressCharge : 0.0));
 
         double discount = getBasePrice() * (student ? studentDiscountRate : 0.0);
         double finalTotal = (getBasePrice() - discount) + (express ? expressCharge : 0.0);
@@ -119,3 +119,15 @@ public class RepairQuotation {
 
     }
 }
+
+// Calculate the final quotation using these rules:
+
+// • Final total. Show monetary amounts to two decimal places.
+
+// • Once all inputs are valid, calculate and display the quotation and automatically store its
+// final total in a one-dimensional double array with space for five quotations. Each
+// completed quotation occupies one array position. Use a counter to track how many
+// quotations have been stored. Data only needs to be retained while the application is
+// running.
+// • Once the array is full, display a message and prevent additional quotations. The user must
+// still be able to select Options 2 and 3.
