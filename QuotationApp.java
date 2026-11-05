@@ -8,6 +8,9 @@ public class QuotationApp {
         String[] yesOrNo = {"y", "n"};
         MenuOptionApp menuOption = new MenuOptionApp();
 
+        RepairQuotation[] quotations = new RepairQuotation[5];
+        double[] total = new double[5];
+
         try (Scanner sc = new Scanner(System.in)) {
             RepairQuotation repairQuotation = new RepairQuotation();
             do {

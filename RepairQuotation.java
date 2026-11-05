@@ -123,8 +123,6 @@ public class RepairQuotation {
 
 // Calculate the final quotation using these rules:
 
-// • Final total. Show monetary amounts to two decimal places.
-
 // • Once all inputs are valid, calculate and display the quotation and automatically store its
 // final total in a one-dimensional double array with space for five quotations. Each
 // completed quotation occupies one array position. Use a counter to track how many
