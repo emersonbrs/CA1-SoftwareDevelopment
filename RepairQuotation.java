@@ -130,12 +130,6 @@ public class RepairQuotation {
 
     // Functions for calculations
     public double calculateFinalQuotation() {
-
-        // Calculating disconts and express
-        double discount = getBasePrice() * (student ? studentDiscountRate : 0.0);
-        double auxExpress = express ? expressCharge : 0.0;
-        //this.individualTotal = getBasePrice() - discount + auxExpress;
-        
         System.out.println("********************************************");
         System.out.println("           Repair Service Details           ");
         System.out.println("********************************************");
@@ -150,13 +144,3 @@ public class RepairQuotation {
         return individualTotal;
     }
 }
-
-// Calculate the final quotation using these rules:
-
-// • Once all inputs are valid, calculate and display the quotation and automatically store its
-// final total in a one-dimensional double array with space for five quotations. Each
-// completed quotation occupies one array position. Use a counter to track how many
-// quotations have been stored. Data only needs to be retained while the application is
-// running.
-// • Once the array is full, display a message and prevent additional quotations. The user must
-// still be able to select Options 2 and 3.

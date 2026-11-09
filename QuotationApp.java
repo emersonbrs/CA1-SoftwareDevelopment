@@ -11,7 +11,7 @@ public class QuotationApp {
 
         // Arrays to make sure the system is saving a limit of 5 quotations
         RepairQuotation[] quotations = new RepairQuotation[5];
-        // double[] total = new double[5];
+
         // variable to count how many quotatins have been added
         int count = 0;
 
@@ -33,7 +33,6 @@ public class QuotationApp {
                             createQuotation.create(myChoice, menuQuotation, repairQuotation, sc, yesOrNo);
 
                             quotations[count] = repairQuotation;
-                            // total[count] = repairQuotation.calculateFinalQuotation();
                             count ++;
                         } else {
                             System.out.println("********************************************");
@@ -42,7 +41,6 @@ public class QuotationApp {
                         }
                         break;
                     case "2":
-                        // repairQuotationMenu.calculateFinalQuotation();
                         double totalQuotations = 0.0;
                         
                         for (int i = 0; i < count; i++) {
@@ -78,7 +76,7 @@ public class QuotationApp {
         }
 
         for (int i = 0; i < count; i++) {
-            System.out.println("Quotation " + (i + 1) + ":" + quotations[i].getCustomerName());
+            System.out.println("Quotation " + (i + 1) + ": " + quotations[i].getCustomerName());
             sum = sum + quotations[i].getIndividualTotal();
 
             // Highest
@@ -89,7 +87,7 @@ public class QuotationApp {
 
         avarage = sum / count;
 
-        System.out.println("Number:" + count);
+        System.out.println("Number: " + count);
         System.out.printf("Combined value: €%.2f%n", totalQuotations);
         System.out.printf("Highest: €%.2f%n", highest);
         System.out.printf("Avarage: €%.2f%n", avarage);
