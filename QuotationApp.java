@@ -70,6 +70,7 @@ public class QuotationApp {
     public static void viewQuotationTotalAndSummary(double totalQuotations, RepairQuotation[] quotations, int count) {
         double sum = 0.0;
         double avarage = 0.0;
+        double highest = quotations[0].getIndividualTotal();
 
         if (count == 0) {
             System.out.println("No quotations.");
@@ -79,14 +80,18 @@ public class QuotationApp {
         for (int i = 0; i < count; i++) {
             System.out.println("Quotation " + (i + 1) + ":" + quotations[i].getCustomerName());
             sum = sum + quotations[i].getIndividualTotal();
-            System.out.println("quotatiins Total" + sum);
+
+            // Highest
+            if (quotations[i].getIndividualTotal() > highest) {
+                highest = quotations[i].getIndividualTotal();
+            }
         }
 
         avarage = sum / count;
 
         System.out.println("Number:" + count);
         System.out.printf("Combined value: €%.2f%n", totalQuotations);
-        System.out.printf("Highest: €%.2f%n", totalQuotations);
+        System.out.printf("Highest: €%.2f%n", highest);
         System.out.printf("Avarage: €%.2f%n", avarage);
     }
 }
