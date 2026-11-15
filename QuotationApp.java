@@ -19,7 +19,8 @@ public class QuotationApp {
             // Creating repairQuotationMenu just to get the menu text and show to the user
             RepairQuotation repairQuotationMenu = new RepairQuotation();
             do {
-                // Setting the choose using the function options, from MenuOptionApp to choose an option from the menu and prevent an different option
+                // Setting the choose using the function options 
+                // from MenuOptionApp to choose an option from the menu and prevent an different option
                 myChoice = menuOption.options(menuGeneral, sc, repairQuotationMenu.getGeneralMenuOption());
 
                 switch (myChoice) {
@@ -56,10 +57,11 @@ public class QuotationApp {
                         System.out.println("********************************************");
                         break;
                     case "3":
-
                         break;
                     default:
-                        break;
+                        System.out.println("********************************************");
+                        System.out.println("You need to choose a valid option.");
+                        System.out.println("********************************************");
                 }
             } while (!myChoice.equals("3"));
         }
